@@ -1,6 +1,6 @@
 ![101](src/images/docker-101-01.png)
 
-Docker for absolute beginners
+#### Docker for absolute beginners
 
 
 Docker Containers has changed the way software is built and shipped.  
