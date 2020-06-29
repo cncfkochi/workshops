@@ -10,14 +10,15 @@ From a developer's point of view, it makes his life much easier to built and shi
 ### History of containers
 
 <details>
-  <summary>1979: Unix V7 - chroot system calls</summary>
-During the development of Unix V7 in 1979, the chroot system call was introduced, changing the root directory of a process and its children to a new location in the filesystem. This advance was the beginning process isolation: segregating file access for each process. Chroot was added to BSD in 1982.
-</details>
+<summary>Evolution of Containers</summary>
 
-<details>
-  <summary>2000: FreeBSD Jails</summary>
-In 2000, a small shared hosting provider came up with FreeBSD jails to achieve clear-cut separation between its services and those of its customers for security and ease of administration. FreeBSD Jails allows administrators to partition a FreeBSD computer system into several independent, smaller systems – called “jails” – with the ability to assign an IP address for each system and configuration.
-</details>
+- 1979: Unix V7 - chroot system calls
+    
+    During the development of Unix V7 in 1979, the chroot system call was introduced, changing the root directory of a process and its children to a new location in the filesystem. This advance was the beginning process isolation: segregating file access for each process. Chroot was added to BSD in 1982.
+
+- 2000: FreeBSD Jails
+    In 2000, a small shared hosting provider came up with FreeBSD jails to achieve clear-cut separation between its services and those of its customers for security and ease of administration. FreeBSD Jails allows administrators to partition a FreeBSD computer system into several independent, smaller systems – called “jails” – with the ability to assign an IP address for each system and configuration.
+
 
 <details>
   <summary>2001: Linux VServer</summary>
@@ -59,19 +60,13 @@ Let Me Contain That For You (LMCTFY) kicked off in 2013 as an open-source versio
 When Docker emerged in 2013, containers exploded in popularity. It’s no coincidence the growth of Docker and container use goes hand-in-hand. Docker also used LXC in its initial stages and later replaced that container manager with its own library, libcontainer. But there’s no doubt that Docker separated itself from the pack by offering an entire ecosystem for container management.
 </details> 
 
-
-<details>
-  <summary>2013: Docker</summary>
-When Docker emerged in 2013, containers exploded in popularity. It’s no coincidence the growth of Docker and container use goes hand-in-hand. Docker also used LXC in its initial stages and later replaced that container manager with its own library, libcontainer. But there’s no doubt that Docker separated itself from the pack by offering an entire ecosystem for container management.
-</details> 
-
 <details>
   <summary>2017: Container Tools Become Mature</summary>
 Hundreds of tools have been developed to make container management easier. While these types of tools have been around for years, 2017 is the year that many of them earned their stripes. Just look at Kubernetes; since its adoption into the Cloud Native Computing Foundation (CNCF) in 2016.
 </details> 
 
 
-
+### A look back to the application deployment
 
 In this mini workshop, we will walk you through the basic concepts of Docker
 
