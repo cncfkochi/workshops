@@ -109,7 +109,11 @@ Run your first docker container
 <br> <br>
 
 ### How Docker Works?
-![101](src/images/architecture.svg)
+
+<p align="center">
+  <img src="src/images/architecture.png" />
+</p>
+
 
 - Docker is the program that enables containers to be built, shipped and run 
 - Docker Engine uses Linux Kernel namespaces and control groups
