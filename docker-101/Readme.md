@@ -67,11 +67,19 @@ From a developer's point of view, it makes his life much easier to built and shi
 
 ### Why Containers
 
+<center>
+
 ![101](src/images/oldway.png)
+
+</center>
 
 The Old Way to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications' executables, configuration, libraries and life cycles with each other and with the host OS. One could build immutable virtual machines(VM) in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.
 
+<center>
+
 ![101](src/images/container.png)
+
+</center>
 
 The New Way is to deploy containers based on operating system level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host.
 - they have their own filesystem
