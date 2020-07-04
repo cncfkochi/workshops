@@ -69,7 +69,199 @@ From a developer's point of view, it makes his life much easier to built and shi
 In this mini workshop, we will walk you through the basic concepts of Docker
 
 
+### Why Containers
+
+![101](src/images/oldway.png)
+
+The Old Way to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications' executables, configuration, libraries and life cycles with each other and with the host OS. One could build immutable virtual machines(VM) in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.
+
+![101](src/images/container.png)
+
+The New Way is to deploy containers based on operating system level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host.
+- they have their own filesystem
+- they can't see each others processes
+- their computational resource usage can be bounded
+
+They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across public IAAS clouds and OS distributions.
+
+### Getting started with Docker Introduction
+
+Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries and anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+<details>
+<summary>
+Run your first docker container
+</summary>
+
+`docker run hello-world`
+
+</details>
+
+- When you run docker run command
+  - Docker engine checks if the image is available or not
+  - If image is not available, docker engine will pull from docker registry 
+  - If image is available, docker engine will run the command locally
+
+### How Docker Works?
+![101](src/images/architecture.svg)
+
+- Docker is the program that enables containers to be built, shipped and run 
+- Docker Engine uses Linux Kernel namespaces and control groups
+
+### Terminology
+- Docker Image
+  - Read only file with OS, libraries and apps
+  - Anyone can create a docker image
+  - Images can be stored in Docker hub (default public registry) or private registry
+- Docker Container
+  - Stateful instance of an image with a writable layer Contains everything needed to  run your application Based on one or more images
+- Docker Registry 
+  - Repository of images
+- Docker Hub
+  - Public docker registry
+
+### What is Docker Hub?
+Docker Hub is the public registry that contains a large number of images available for your use.
+
+### Docker Search
+<details>
+<summary>
+You can also search through all publicly available images in docker hub.
+</summary>
+
+`docker search wpscan`
+</details>
+
+### Some docker commands
+
+<details>
+<summary> List all running containers </summary>
+
+`docker ps`
+</details>
+<details>
+<summary> List all running and stopped containers </summary>
+
+`docker ps -a`
+</details>
+<details>
+<summary> Run a container interactively </summary>
+
+`docker run --name samplecontainer -it ubuntu:latest /bin/bash`
+</details>
+
+<details>
+<summary> List all images</summary>
+
+`docker images`
+</details>
+
+<details>
+<summary> Run container in detached mode </summary>
+
+`docker run --name pingcontainer -d alpine:latest ping 127.0.0.1 -c 50`
+</details>
+<details>
+<summary> Live tail logs inside a container </summary>
+
+`docker logs -f pingcontainer `
+</details>
+<details>
+<summary> Port forwarding </summary>
+
+`docker run -d --name nginxalpine -p 8080:80 nginx:alpine`
+</details>
+
+<details>
+<summary> List volumes </summary>
+
+`docker volume ls`
+</details>
+
+<details>
+<summary> List network </summary>
+
+`docker network ls`
+</details>
+
+### Inspecting a container image
+<details>
+<summary>Returns low-level information on Docker objects </summary>
+
+  `docker inspect <container name> `
+
+  `docker inspect <image name>`
+</details>
+<details>
+<summary>Let's inspect the nginx:alpine image</summary>
+  
+`docker inspect nginx:alpine`
+</details>
+
+### Docker history
+
+<details>
+<summary> Show the history of an image </summary>
+
+`docker history jess/htop`
+</details>
+
+### Stopping and remove container
+<details>
+<summary>Let's run a nginx container</summary>
+
+ `docker run --name dummynginx -d nginx:alpine`
+</details>
+<details>
+<summary>Identify the container name or id using `docker ps`</summary>
+
+`docker stop dummynginx`
+</details>
+<details>
+<summary>To remove container, it has to be stopped. Then run the below command</summary>
+
+`docker rm dummynginx`
+</details>
+
+### Namespaces
+Docker uses namespaces to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container.
+- The pid namespace: Process isolation (PID: Process ID)
+- The net namespace: Managing network interfaces (NET: Networking)
+- The ipc namespace: Managing access to IPC resources (IPC: InterProcess Communication
+- The mnt namespace: Managing filesystem mount points (MNT: Mount)
+- The uts namespace: Different host and domain names (UTS: Unix Timesharing System)
+- The user namespace: Isolate security-related identifiers (USER: userid, groupid)
+
+### Why Kubernetes
+A lot of developers have moved or are moving from a traditional world to a container based ecosystem. This allows developers to package their application code, dependencies and required libraries in a simple container and use it anywhere wherever there is a container runtime available.
+
+An example of a container runtime is Docker
+
+At a minimum, Kubernetes can schedule and run application containers on clusters of physical or virtual machines. However, Kubernetes also allows developers to ‘cut the cord’ to physical and virtual machines, moving from a host- centric infrastructure to a container-centric infrastructure.
+
+This approach provides the full advantages and benefits inherent to containers. Kubernetes provides the infrastructure to build a truly container centric development environment. This is the primary reason developers love it.
+
+### What is Kubernetes
+With Kubernetes, you are able to quickly and efficiently respond to customer demand
+- Deploy your applications quickly and predictably
+- Scale your applications on the fly
+- Roll out new features seamlessly
+- Limit hardware usage to required resources only
+- Our goal is to foster an ecosystem of components and tools that relieve the burden of running applications in public and private clouds
+
+According to Brian Grant Kubernetes is an open-source platform designed to automate deploying, scaling, and operating application containers.
+
+
+Kubernetes is
+- Portable: public, private, hybrid, multi-cloud
+- Extensible: modular, pluggable, hookable, composable
+- Self-healing: auto-placement, auto-restart, auto-replication, auto-scaling
+
+
+
 
 References
 
 1. [A Brief History of Containers](https://blog.aquasec.com/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016)
+1. [Docker overview](https://docs.docker.com/get-started/overview/)
+1. [Kubernetes overview](https://kubernetes.io/docs/home/)
