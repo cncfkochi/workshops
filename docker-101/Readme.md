@@ -64,7 +64,7 @@ From a developer's point of view, it makes his life much easier to built and shi
 </details> 
 
 
-### A look back to the application deployment
+### Why Containers
 
 In this mini workshop, we will walk you through the basic concepts of Docker
 
