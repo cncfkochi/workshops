@@ -64,10 +64,6 @@ From a developer's point of view, it makes his life much easier to built and shi
 </details> 
 
 
-### Why Containers
-
-In this mini workshop, we will walk you through the basic concepts of Docker
-
 
 ### Why Containers
 
@@ -84,7 +80,9 @@ The New Way is to deploy containers based on operating system level virtualizati
 
 They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across public IAAS clouds and OS distributions.
 
-### Getting started with Docker Introduction
+<br> <br>
+
+### Getting started with Docker - Introduction
 
 Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries and anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
 
@@ -102,11 +100,15 @@ Run your first docker container
   - If image is not available, docker engine will pull from docker registry 
   - If image is available, docker engine will run the command locally
 
+<br> <br>
+
 ### How Docker Works?
 ![101](src/images/architecture.svg)
 
 - Docker is the program that enables containers to be built, shipped and run 
 - Docker Engine uses Linux Kernel namespaces and control groups
+
+<br> <br>
 
 ### Terminology
 - Docker Image
@@ -120,8 +122,12 @@ Run your first docker container
 - Docker Hub
   - Public docker registry
 
+<br> <br>
+
 ### What is Docker Hub?
 Docker Hub is the public registry that contains a large number of images available for your use.
+
+<br> <br>
 
 ### Docker Search
 <details>
@@ -131,6 +137,8 @@ You can also search through all publicly available images in docker hub.
 
 `docker search wpscan`
 </details>
+
+<br> <br>
 
 ### Some docker commands
 
@@ -184,6 +192,8 @@ You can also search through all publicly available images in docker hub.
 `docker network ls`
 </details>
 
+<br> <br>
+
 ### Inspecting a container image
 <details>
 <summary>Returns low-level information on Docker objects </summary>
@@ -223,6 +233,8 @@ You can also search through all publicly available images in docker hub.
 `docker rm dummynginx`
 </details>
 
+<br> <br>
+
 ### Namespaces
 Docker uses namespaces to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container.
 - The pid namespace: Process isolation (PID: Process ID)
@@ -232,6 +244,8 @@ Docker uses namespaces to provide the isolated workspace called the container. W
 - The uts namespace: Different host and domain names (UTS: Unix Timesharing System)
 - The user namespace: Isolate security-related identifiers (USER: userid, groupid)
 
+<br> <br>
+
 ### Why Kubernetes
 A lot of developers have moved or are moving from a traditional world to a container based ecosystem. This allows developers to package their application code, dependencies and required libraries in a simple container and use it anywhere wherever there is a container runtime available.
 
@@ -240,6 +254,8 @@ An example of a container runtime is Docker
 At a minimum, Kubernetes can schedule and run application containers on clusters of physical or virtual machines. However, Kubernetes also allows developers to ‘cut the cord’ to physical and virtual machines, moving from a host- centric infrastructure to a container-centric infrastructure.
 
 This approach provides the full advantages and benefits inherent to containers. Kubernetes provides the infrastructure to build a truly container centric development environment. This is the primary reason developers love it.
+
+<br> <br>
 
 ### What is Kubernetes
 With Kubernetes, you are able to quickly and efficiently respond to customer demand
@@ -258,7 +274,7 @@ Kubernetes is
 - Self-healing: auto-placement, auto-restart, auto-replication, auto-scaling
 
 
-
+<br> <br>
 
 References
 
